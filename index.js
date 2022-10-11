@@ -80,7 +80,7 @@ const promptManager = () =>{
 
 const buildTeam =()=>
 {
-    return inquirer
+     inquirer
     .prompt([
         {
             type: 'list',
@@ -112,7 +112,7 @@ const buildTeam =()=>
                 }
         else
         {
-            console.log(employeeArr);
+          console.log(employeeArr);
         }
     })
 };
@@ -269,15 +269,6 @@ const promptIntern = () =>
         }
     ]);
 };
-
-
-
-
-
-
-
-
-
 
 
 
