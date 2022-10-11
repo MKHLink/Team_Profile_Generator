@@ -2,6 +2,9 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const fs= require('fs');
+const generateHTML = require('./src/page-template');
+
 
 let employeeArr = [];
 
@@ -113,6 +116,11 @@ const buildTeam =()=>
         else
         {
           console.log(employeeArr);
+
+          fs.writeFile('./dist/Team_Profile.html',generateHTML(),err =>{
+            if(err) throw new (err);
+            console.log("HTML file complete");
+          });
         }
     })
 };
@@ -282,6 +290,6 @@ promptManager()
     console.log(manager.getEmail());
     console.log(manager.getRole());
 
-   
+    employeeArr.push(manager);
 })
 .then(buildTeam);
