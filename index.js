@@ -117,7 +117,7 @@ const buildTeam =()=>
         {
           console.log(employeeArr);
 
-          fs.writeFile('./dist/Team_Profile.html',generateHTML(),err =>{
+          fs.writeFile('./dist/Team_Profile.html',generateHTML(employeeArr),err =>{
             if(err) throw new (err);
             console.log("HTML file complete");
           });
