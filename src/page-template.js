@@ -26,7 +26,7 @@ const generateCards = (teamData) =>{
      <h5 class="card-title">${teamData[i].getName()}</h5>
      <p class="card-text">${teamData[i].getId()}</p>
      <a href="mailto: ${teamData[i].getEmail()}" class="btn btn-primary">Send Email</a>
-     <a href="https//github.com/ ${teamData[i].getGithub()}" class="btn btn-primary">GitHub</a>
+     <a href="https://github.com/ ${teamData[i].getGithub()}" class="btn btn-primary">GitHub</a>
    </div>
  </div>.`);
   }
