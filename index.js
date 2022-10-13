@@ -5,9 +5,10 @@ const Intern = require('./lib/Intern');
 const fs= require('fs');
 const generateHTML = require('./src/page-template');
 
-
+//this array holds all the instances of the classes
 let employeeArr = [];
 
+//this function asks the user about their managerial credintials
 const promptManager = () =>{
     return inquirer
     .prompt([
@@ -81,6 +82,7 @@ const promptManager = () =>{
     ]);
 };
 
+//this function asks the user about their action and generates the HTML file based on their input
 const buildTeam =()=>
 {
      inquirer
@@ -108,7 +110,7 @@ const buildTeam =()=>
                     promptIntern()
                     .then(internData=>{
                         console.log(internData);
-                        const intern = new Intern(internData.name,internData.id,internData.email,internData.github);
+                        const intern = new Intern(internData.name,internData.id,internData.email,internData.school);
                         employeeArr.push(intern);
                         return buildTeam();
                     });
@@ -117,6 +119,7 @@ const buildTeam =()=>
         {
           console.log(employeeArr);
 
+            //generating HTML and CSS files in /dist
           fs.writeFile('./dist/Team_Profile.html',generateHTML(employeeArr),err =>{
             if(err) throw new (err);
             console.log("HTML file complete");
@@ -124,7 +127,7 @@ const buildTeam =()=>
 
           fs.copyFile('./src/style.css', './dist/style.css', err => {
             if(err) throw new (err);
-            console.log("HTML file complete");
+            console.log("CSS file complete");
           });
         }
     })
@@ -134,7 +137,7 @@ const buildTeam =()=>
 
 
 
-
+//this function asks the user about the engineer data
 const promptEngineer = () =>
 {
     return inquirer
@@ -209,6 +212,7 @@ const promptEngineer = () =>
     ]);
 };
 
+//this function asks the user about intern data
 const promptIntern = () =>
 {
     return inquirer
@@ -268,8 +272,8 @@ const promptIntern = () =>
             type: 'input',
             name:'school',
             message: "Enter intern's school name",
-            validate:office =>{
-                if(office)
+            validate:schoolName =>{
+                if(schoolName)
                 {
                     return true;
                 }

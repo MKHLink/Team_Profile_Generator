@@ -1,3 +1,4 @@
+//this functio takes in the data from index and compares thier instance names for the card creation
 const generateCards = (teamData) =>{
   let tempArr = [];
 
@@ -26,7 +27,7 @@ const generateCards = (teamData) =>{
      <h5 class="card-title">${teamData[i].getName()}</h5>
      <p class="card-text">${teamData[i].getId()}</p>
      <a href="mailto: ${teamData[i].getEmail()}" class="btn btn-primary">Send Email</a>
-     <a href="https://github.com/ ${teamData[i].getGithub()}" class="btn btn-primary">GitHub</a>
+     <a href="https://github.com/${teamData[i].getGithub()}" target="_blank" class="btn btn-primary">GitHub</a>
    </div>
  </div>.`);
   }
@@ -39,7 +40,7 @@ const generateCards = (teamData) =>{
    <div class="card-body">
      <h5 class="card-title">${teamData[i].getName()}</h5>
      <p class="card-text">${teamData[i].getId()}</p>
-     <p class="card-text">School:${teamData[i].getSchool()}</p>
+     <p class="card-text">${teamData[i].getSchool()}</p>
      <a href="mailto: ${teamData[i].getEmail()}" class="btn btn-primary">Send Email</a>
    </div>
  </div>.`);
@@ -50,6 +51,7 @@ const generateCards = (teamData) =>{
 
 };
 
+//the HTML file template
 module.exports = (dataArr)=>
 {
   console.log(dataArr);
