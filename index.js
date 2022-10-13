@@ -121,6 +121,11 @@ const buildTeam =()=>
             if(err) throw new (err);
             console.log("HTML file complete");
           });
+
+          fs.copyFile('./src/style.css', './dist/style.css', err => {
+            if(err) throw new (err);
+            console.log("HTML file complete");
+          });
         }
     })
 };

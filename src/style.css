@@ -1,0 +1,33 @@
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: var(--secondary);
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
+  header{
+    background-color: aliceblue;
+    font-style: italic;
+    text-decoration: underline;
+    color: brown;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+footer{
+  background-color: aliceblue;
+  font-style: italic;
+  color: brown;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+  

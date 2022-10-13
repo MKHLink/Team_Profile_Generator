@@ -74,7 +74,8 @@ module.exports = (dataArr)=>
     <div>${generateCards(dataArr)}<div>
     
     <footer class="container text-center py-3">
-      
+      <p>Made by Mohammad Komol Hasan<p>
+      <p>GitHub:<a href="https://github.com/MKHLink">MKHLink</a><p>
     </footer>
   </body>
   </html>`;
